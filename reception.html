@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Reception · Lakeside Medical</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="page reception">
+
+  <header class="rx-header">
+    <div class="container rx-header-inner">
+      <div class="rx-brand">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+        </span>
+        <span class="rx-label">Lakeside Medical Reception — London International · <a href="https://lisrc.ae" target="_blank" rel="noopener">lisrc.ae</a></span>
+      </div>
+      <div class="rx-corner">
+        <button type="button" class="rx-logout" id="logout" hidden>Log out</button>
+        <span class="rx-by">by Aisha Khan</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="rx-main">
+    <!-- Login -->
+    <section class="container rx-login" id="login-view" hidden>
+      <form class="auth-card" id="login-form" novalidate>
+        <h1>Reception login</h1>
+        <p class="muted">Staff only. Enter the reception password to view today's appointments.</p>
+        <label class="field">
+          <span>Password</span>
+          <input type="password" name="password" autocomplete="current-password" required>
+        </label>
+        <p class="field-error" id="login-error" role="alert"></p>
+        <button type="submit" class="btn btn-block">Log in</button>
+      </form>
+    </section>
+
+    <!-- Dashboard -->
+    <section class="container" id="dash-view" hidden>
+      <div class="rx-summary">
+        <div class="rx-count">
+          <strong id="count">0</strong>
+          <span>appointments today</span>
+        </div>
+        <div class="rx-summary-meta">
+          <p class="rx-date" id="today"></p>
+          <ul class="rx-stats" id="stats"></ul>
+        </div>
+        <button type="button" class="btn btn-outline rx-refresh" id="refresh">Refresh</button>
+      </div>
+      <p class="field-error" id="dash-error" role="alert"></p>
+      <div id="groups" class="rx-groups" aria-live="polite"></div>
+      <p class="rx-updated muted" id="updated"></p>
+    </section>
+  </main>
+
+  <script src="/reception.js"></script>
+</body>
+</html>

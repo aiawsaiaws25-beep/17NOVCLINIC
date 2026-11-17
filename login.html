@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log in · Lakeside Medical Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="page">
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="logo" aria-label="Lakeside Medical Clinic home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+        </span>
+        <span>Lakeside <strong>Medical</strong></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu">
+        <a href="index.html#specialties">Specialties</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="login.html" data-auth="guest">Log in</a>
+        <a href="my-appointments.html" data-auth="user">My Appointments</a>
+        <a href="#" data-auth="user" data-logout>Log out</a>
+        <a href="index.html#book" class="btn btn-small">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="container auth-wrap">
+      <div class="demo-banner" role="note">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        <span><strong>Demo mode</strong> — data is stored on this device only.<br>
+          Demo login: <code>demo@lakeside.ae</code> / <code>Demo1234</code>
+          · <a href="#" id="use-demo">Fill in</a></span>
+      </div>
+
+      <div class="auth-card">
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" id="tab-login" aria-selected="true" aria-controls="login-form">Log in</button>
+          <button type="button" role="tab" id="tab-signup" aria-selected="false" aria-controls="signup-form">Sign up</button>
+        </div>
+
+        <form id="login-form" class="auth-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+          <h1>Welcome back</h1>
+          <p class="muted">Log in to view and manage your appointments.</p>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label class="field">
+            <span>Password</span>
+            <input type="password" name="password" autocomplete="current-password" required>
+          </label>
+          <p class="field-error" data-error></p>
+          <button type="submit" class="btn btn-block">Log in</button>
+          <p class="switch">New patient? <a href="#signup" data-switch="signup">Create an account</a></p>
+        </form>
+
+        <form id="signup-form" class="auth-form" role="tabpanel" aria-labelledby="tab-signup" novalidate hidden>
+          <h1>Create your account</h1>
+          <p class="muted">Use the same email you book with to see all your appointments.</p>
+          <label class="field">
+            <span>Full name</span>
+            <input type="text" name="name" autocomplete="name" required>
+          </label>
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label class="field">
+            <span>Password <small>(at least 8 characters)</small></span>
+            <input type="password" name="password" autocomplete="new-password" minlength="8" required>
+          </label>
+          <label class="field">
+            <span>Confirm password</span>
+            <input type="password" name="confirm" autocomplete="new-password" required>
+          </label>
+          <p class="field-error" data-error></p>
+          <button type="submit" class="btn btn-block">Sign up</button>
+          <p class="switch">Already have an account? <a href="#login" data-switch="login">Log in</a></p>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year">2026</span> Lakeside Medical Clinic. All rights reserved.</p>
+      <p class="credit">Lakeside Medical Clinic · built at London International · <a href="https://lisrc.ae" target="_blank" rel="noopener">lisrc.ae</a> · by Aisha Khan</p>
+    </div>
+  </footer>
+
+  <script src="storage.js"></script>
+  <script src="site.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

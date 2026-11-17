@@ -1,0 +1,16 @@
+{
+  "name": "lakeside-medical-clinic",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "typecheck:functions": "tsc -p tsconfig.functions.json",
+    "start": "npm run build && node server.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}

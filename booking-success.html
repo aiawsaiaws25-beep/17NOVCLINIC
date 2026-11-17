@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking status · Lakeside Medical Clinic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="page">
+
+  <header class="site-header">
+    <div class="container nav">
+      <a href="/index.html" class="logo" aria-label="Lakeside Medical Clinic home">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></svg>
+        </span>
+        <span>Lakeside <strong>Medical</strong></span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="nav-menu" class="nav-menu">
+        <a href="/index.html#specialties">Specialties</a>
+        <a href="/index.html#about">About Us</a>
+        <a href="/index.html#contact">Contact</a>
+        <a href="/login.html" data-auth="guest">Log in</a>
+        <a href="/my-appointments.html" data-auth="user">My Appointments</a>
+        <a href="#" data-auth="user" data-logout>Log out</a>
+        <a href="/index.html#book" class="btn btn-small">Book now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="auth-main">
+    <div class="container result-wrap">
+      <div class="auth-card result-card" id="result" aria-live="polite">
+        <div class="spinner" aria-hidden="true"></div>
+        <h1>Checking your payment…</h1>
+        <p class="muted">Please wait while we confirm your deposit with Stripe.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year">2026</span> Lakeside Medical Clinic. All rights reserved.</p>
+      <p class="credit">Lakeside Medical Clinic · built at London International · <a href="https://lisrc.ae" target="_blank" rel="noopener">lisrc.ae</a> · by Aisha Khan</p>
+    </div>
+  </footer>
+
+  <script src="/storage.js"></script>
+  <script src="/site.js"></script>
+  <script src="/payments.js"></script>
+  <script src="/booking-success.js"></script>
+</body>
+</html>
